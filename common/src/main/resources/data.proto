@@ -1,0 +1,13 @@
+syntax = "proto3";
+package connectedcar;
+
+option java_package = "com.merc.connected.cars.common.protobuf";
+option java_outer_classname = "DriverProtos";
+
+message Person {
+    int32 id = 1;
+    string name = 2;
+    string dob = 3;
+    double salary = 4;
+    int32 age = 5;
+}
