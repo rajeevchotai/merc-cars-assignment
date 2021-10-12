@@ -37,7 +37,5 @@ Access can be done via the Swagger UI
 - **backend**: http://localhost:8082/backend/documentation/swagger-ui/
 
 
-## To Do
-Dockerfile
 
  
