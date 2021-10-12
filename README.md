@@ -19,7 +19,7 @@ This project consists of 3 modules written in Java 11 and Spring Boot Framework
 
 
 ## Build and Deploy
-All the projects use Maven 3 as the build tool. Maven Wrapper files (mvw) are provided as part of the repo that can be used to run the Maven project without having Maven installed and present on the path. Java 11 however needs to be installed beforehand.
+All the projects use Maven 3 as the build tool. Maven Wrapper files (mvw) are provided as part of the repo that can be used to run the Maven project without having Maven installed and present on the path. Java 11 however needs to be installed beforehand and the JAVA_HOME environment variable must be set appropriately.
 
 First build the common module using
 `./mvnw clean install` on Linux or `mvnw clean install` on Windows
