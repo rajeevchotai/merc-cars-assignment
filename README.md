@@ -22,10 +22,10 @@ This project consists of 3 modules written in Java 11 and Spring Boot Framework
 All the projects use Maven 3 as the build tool. Maven Wrapper files (mvw) are provided as part of the repo that can be used to run the Maven project without having Maven installed and present on the path. Java 11 however needs to be installed beforehand.
 
 First build the common module using
-`./mvnw clean install` on Linux or `mvnw.bat clean install` on Windows
+`./mvnw clean install` on Linux or `mvnw clean install` on Windows
 
 The other two modules can be built independently using
-`./mvnw clean package spring-boot:repackage` on Linux or `mvnw.bat clean package spring-boot:repackage` on Windows
+`./mvnw clean package spring-boot:repackage` on Linux or `mvnw clean package spring-boot:repackage` on Windows
 
 ## Running the application
 The frontend can be run using `java -jar frontend-1.0.0.jar` present in the *target* directory inside the frontend module
