@@ -28,8 +28,8 @@ The other two modules can be built independently using
 `./mvnw clean package spring-boot:repackage` on Linux or `mvnw clean package spring-boot:repackage` on Windows
 
 ## Running the application
-The frontend can be run using `java -jar frontend-1.0.0.jar` present in the *target* directory inside the frontend module
-The frontend can be run using `java -jar backend-1.0.0.jar` present in the *target* directory inside the backend module
+- The frontend can be run using `java -jar frontend-1.0.0.jar` present in the *target* directory inside the frontend module
+- The backend can be run using `java -jar backend-1.0.0.jar` present in the *target* directory inside the backend module
 
 ## Access the application
 Access can be done via the Swagger UI 
