@@ -13,12 +13,15 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.UriBuilder;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.InvalidAlgorithmParameterException;
@@ -51,7 +54,7 @@ public class BackendService {
     @JmsListener(destination = "${mq.queue-name}")
     public void receiveMessage(@Payload Person person,
                                @Header(name = "fileType") String fileType,
-                               @Header(name = "command") String command) throws URISyntaxException {
+                               @Header(name = "command") String command) {
         PersonData personData = new PersonData();
 
         switch(command) {
@@ -91,7 +94,7 @@ public class BackendService {
         }
     }
 
-    public void store(PersonData personData, String fileType) throws URISyntaxException {
+    public void store(PersonData personData, String fileType){
         personRepository.save(personData);
 
         List<PersonData> personDataList = new ArrayList<>();
@@ -106,14 +109,12 @@ public class BackendService {
         }
     }
 
-    public Path csvBeanPath() throws URISyntaxException {
-        URI uri = ClassLoader.getSystemResource(csvFile).toURI();
-        return Paths.get(uri);
+    public Path csvBeanPath()  {
+        return Paths.get(csvFile);
     }
 
-    public Path xmlBeanPath() throws URISyntaxException {
-        URI uri = ClassLoader.getSystemResource(xmlFile).toURI();
-        return Paths.get(uri);
+    public Path xmlBeanPath() {
+        return Paths.get(xmlFile);
     }
 }
 
